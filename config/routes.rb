@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   
   root "main#index"
   get "homepage", to: "homepage#index"
-  post "login", to: "sessions#create"
+  resources :users, only: [:new, :create, :welcome, :show]
+  resources :sessions, only: [:new, :create, :destroy]
+
 
 
 end
