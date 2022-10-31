@@ -1,0 +1,10 @@
+<%= content_tag :h1, "Please Sign Up" %>
+<%= form_with model: @user, url: sessions_path do |f| %>
+    
+    <%= f.text_field :email %><br>
+    <%= f.password_field :password %><br>
+  
+    <%= f.submit "Get Started" %>
+
+  <% end %>
+
