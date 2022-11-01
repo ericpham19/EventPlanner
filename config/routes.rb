@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   
   root "main#index"
   get "homepage", to: "homepage#index"
+
+  get "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
   resources :users, only: [:new, :create, :welcome, :show]
  
 
