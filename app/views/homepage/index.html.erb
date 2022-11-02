@@ -1,1 +1,5 @@
 <h1> Event Planner </h1>
+
+<% if @user %>
+ Logged in as: <%= @user.email %>
+<% end %>

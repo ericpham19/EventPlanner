@@ -2,7 +2,10 @@ class HomepageController < ApplicationController
 
     def index
         flash.now[:notice] = "HELLO"
-        flash.now[:alert] = "Invalid"
+        if session[:user_id]
+            @user = User.find_by(id: session[:user_id])
+        end
+       
     end
 
     def content
