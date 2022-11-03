@@ -1,7 +1,9 @@
+
 <h1> Event Planner </h1>
 
 <% if Current.user %>
- Logged in as: <%= Current.user.email %>
+ Logged in as: <%= Current.user.first_name.capitalize %>
 
- <%= button_to "Logout", logout_path, method: :delete %>
+
+
 <% end %>
