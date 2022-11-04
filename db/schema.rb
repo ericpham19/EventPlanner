@@ -17,10 +17,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_000934) do
     t.integer "duration"
     t.string "description"
     t.integer "user_id", null: false
-    t.integer "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_booking_types_on_booking_id"
     t.index ["user_id"], name: "index_booking_types_on_user_id"
   end
 
@@ -29,10 +27,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_000934) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.integer "booking_type_id", null: false
     t.datetime "start_at"
     t.datetime "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["booking_type_id"], name: "index_bookings_on_booking_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,6 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_000934) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "booking_types", "bookings"
   add_foreign_key "booking_types", "users"
+  add_foreign_key "bookings", "booking_types"
 end
