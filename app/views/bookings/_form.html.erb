@@ -38,8 +38,9 @@
 
 
   <div>
-    <%= form.label :booking_type_id, style: "display: block" %>
-    <%= form.text_field :booking_type_id %>
+  Category: <b><%= @booking_type.category %></b>
+    
+  <%= form.hidden_field :booking_type_id, :value => @booking_type.id%>
   </div>
 
   <div>

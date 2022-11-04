@@ -2,8 +2,39 @@
 <h1> Event Planner </h1>
 
 <% if Current.user %>
- Logged in as: <%= Current.user.first_name.capitalize %>
+  Logged in as: <%= Current.user.first_name.capitalize %>
+<% end %>
 
 
+<br />
+<% if @booking_types.present? %>
+  <% @booking_types.each do |booking_type| %>
+    <%= link_to booking_type.category, new_booking_path(booking_type: booking_type.category), class: '' %>
+    <br/>
+  <% end %>
+<% end %>
 
+<br />
+<% if @bookings.present? %>
+  <% @bookings.each do |booking| %>
+    <%= link_to 'Show', booking_path(booking), class: '' %>
+    <table>
+      <thead> 
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Status</th>
+        <th>Booking type</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= booking.first_name %></td>
+        <td><%= booking.last_name %></td>
+        <td><%= booking.status %></td>
+        <td><%= booking.booking_type.category %></td>
+      </tr>
+      </tbody>
+    </table>
+  <% end %>
 <% end %>
