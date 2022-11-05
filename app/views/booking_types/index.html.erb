@@ -2,17 +2,16 @@
 
 <h1>Booking Types Available</h1>
 
-<div >
+ 
   <% @booking_types.each do |booking_type| %>
-  
+    
+
+
     <%= render booking_type %>
-    <p>
-      <%= link_to "Show this booking type", booking_type %>
-    </p>
+    <p> <%= link_to "See this type", booking_type %></p>
+
+
 <% end %>
-</div>
-
-
 <div >
 <%= link_to "New booking type", new_booking_type_path %>
 </div>
