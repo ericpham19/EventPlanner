@@ -1,28 +1,27 @@
 <div id="<%= dom_id booking %>">
   
-  <p>
-    <strong>First name:</strong>
-    <%= booking.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= booking.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= booking.email %>
-  </p>
-
-  <p>
-    <strong>Start at:</strong>
-    <%= booking.start_at %>
-  </p>
-
-  <p>
-    <strong>End at:</strong>
-    <%= booking.end_at %>
-  </p>
+<table class= "table mt-5">
+<thead> 
+<tr>
+  <th scope="col"> First name</th>
+  <th scope="col">Last name</th>
+  <th scope="col">Booking type</th>
+  <th scope="col"> Description</th>
+  <th scope="col"> Start At</th>
+  <th scope="col"> End At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><%= booking.first_name %></td>
+  <td><%= booking.last_name %></td>
+ 
+  <td><%= booking.booking_type.category %></td>
+  <td><%= booking.booking_type.description %></td>
+  <td><%= booking.start_at%></td>
+  <td><%= booking.end_at%></td>
+</tr>
+</tbody>
+</table>
 
 </div>

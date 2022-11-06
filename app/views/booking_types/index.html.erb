@@ -1,17 +1,16 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="justify-center">
 <h1>Booking Types Available</h1>
-
- 
+</div>
   <% @booking_types.each do |booking_type| %>
     
 
 
     <%= render booking_type %>
-    <p> <%= link_to "See this type", booking_type %></p>
+    <p class= "text-center" text-center> <%= link_to "See this type", booking_type %></p>
 
 
 <% end %>
-<div >
-<%= link_to "New booking type", new_booking_type_path %>
+<div class = "text-center">
+<%= link_to "New booking type", new_booking_type_path, class:"btn btn-primary" %>
 </div>

@@ -7,13 +7,13 @@
  
 
 <br />
-<div class = "container text-center">
+<div class = "grid text-center">
 <% if @booking_types.present? %>
   <% @booking_types.each do |booking_type| %>
    
-   
+    <div class= "mt-5 fs-2 btn btn-light gap-xl">
     <%= link_to booking_type.category, new_booking_path(booking_type: booking_type.category), class: '' %>
-    <br/>
+    </div>
 
   <% end %>
 <% end %>
@@ -29,9 +29,10 @@
       <tr>
         <th scope="col"> First name</th>
         <th scope="col">Last name</th>
-       
         <th scope="col">Booking type</th>
         <th scope="col"> Description</th>
+        <th scope="col"> Start At</th>
+        <th scope="col"> End At</th>
       </tr>
       </thead>
       <tbody>
@@ -41,9 +42,12 @@
        
         <td><%= booking.booking_type.category %></td>
         <td><%= booking.booking_type.description %></td>
+        <td><%= booking.start_at%></td>
+        <td><%= booking.end_at%></td>
       </tr>
       </tbody>
     </table>
-    <%= link_to 'Show', booking_path(booking), class: '' %>
+
+    <%= link_to 'Show', booking_path(booking), class: 'btn btn-primary' %>
   <% end %>
 <% end %>
