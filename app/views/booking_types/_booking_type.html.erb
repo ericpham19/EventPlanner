@@ -1,24 +1,26 @@
 <div id="<%= dom_id booking_type %>"   >
-  <div class="d-flex flex-column">
-  <div >
-  <p>
-    <strong>Category:</strong>
-    <%= booking_type.category %>
-  </p>
-  </div>
-
-  <p>
-    <strong>Location:</strong>
-    <%= booking_type.location %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= booking_type.description %>
-  </p>
-
-
-  <p>
+  <div class="container text-center ">
+    <div class= "row "
+        <div class="col">
+        <p>
+          <strong>Category:</strong>
+          <%= booking_type.category %>
+        </p>
+         </div>
+        <div class="col"> 
+        <p>
+           <strong>Location:</strong>
+          <%= booking_type.location %>
+          </p>
+         </div>
+          <div class="col">
+          <p>
+           <strong>Description:</strong>
+            <%= booking_type.description %>
+            </p>
+          </div>
+    </div>
+ 
    
   </div>
 </div>

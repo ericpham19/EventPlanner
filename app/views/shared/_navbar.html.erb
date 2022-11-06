@@ -24,6 +24,10 @@
             <span class="navbar-text fs-4 "><%= Current.user.email %></span>
         </li>
 
+        <li class= "nav-item mt-2">
+            <span class="navbar-text fs-4 "> ID: <%= Current.user.id %></span>
+        </li>
+
         <li class= "nav-item">
             <%= button_to "Logout", logout_path, method: :delete,  class:"navbar navbar-dark bg-primary" %>
         </li>

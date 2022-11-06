@@ -6,36 +6,36 @@
   <% end %>
     </div>
 <% end %>
-<div>
-  <div >
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+
+  <div class= "mb-3"  >
+    <%= form.label :first_name, style: "display: block", class: "fw-bolder" %>
+    <%= form.text_field :first_name , class:"form-control text-center"%>
   </div>
 
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-
-  <div>
-    <%= form.label :start_at, style: "display: block" %>
-    <%= form.datetime_field :start_at %>
-  </div>
-
-  <div>
-    <%= form.label :end_at, style: "display: block" %>
-    <%= form.datetime_field :end_at %>
+  <div class= "mb-3"  >
+    <%= form.label :last_name, style: "display: block" , class: "fw-bolder"%>
+    <%= form.text_field :last_name, class:"form-control text-center" %>
   </div>
 
 
-  <div>
+  <div class= "mb-3">
+    <%= form.label :start_at, style: "display: block",class: "fw-bolder" %>
+    <%= form.datetime_field :start_at, class:"form-control text-center" %>
+  </div>
+
+  <div class= "mb-3">
+    <%= form.label :end_at, style: "display: block",class: "fw-bolder"%>
+    <%= form.datetime_field :end_at, class:"form-control text-center" %>
+  </div>
+
+
+  <div class= "mb-3">
   Category: <b><%= @booking_type.category %></b>
     
   <%= form.hidden_field :booking_type_id, :value => @booking_type.id%>
   </div>
 
-  <div>
+  <div class= "mb-3">
     <%= form.submit %>
   </div>
 
