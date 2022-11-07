@@ -6,6 +6,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.string :email
       t.references :booking_type, null: false, foreign_key: true
+      t.references :user,  foreign_key: true
       t.datetime :start_at
       t.datetime :end_at
 

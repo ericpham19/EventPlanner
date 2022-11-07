@@ -27,15 +27,16 @@
   </div>
 
  
-
   <div>
- 
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id, class:"form-control text-center"%>
+  <% if Current.user %>
+    User ID: <b><%= Current.user.id %></b>
 
+ 
+    <%= form.hidden_field :user_id, :value => Current.user.id%>
+  <% end %>
   </div>
 
-  <div>
+
     <%= form.submit %>
   </div>
 <% end %>

@@ -2,6 +2,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show edit update destroy ]
   before_action :set_booking_type, only: %i[ new edit ]
+
   skip_before_action :set_current_user
 
   def index
@@ -67,6 +68,8 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
   end
+
+ 
 
   def set_booking_type
     @booking_type = BookingType.find_by(category: params[:booking_type])
