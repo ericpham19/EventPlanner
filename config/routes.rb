@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   post "sign_in", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
-  resources :users, only: [:new, :create, :welcome, :show]
+  resources :users
   resources :booking_types
   resources :bookings
-  
+ 
   resources :booking_types do
     resources :bookings
   end

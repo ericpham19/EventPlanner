@@ -3,10 +3,15 @@
 <%= render @booking_type %>
 
 <div class= "text-center">
-  <%= link_to "Edit this booking type", edit_booking_type_path(@booking_type) %> |
-  <%= link_to "Back to booking types", booking_types_path %>
+  <%= link_to "Edit this booking type", edit_booking_type_path(@booking_type), class: "btn btn-primary" %> |
+  <%= link_to "Back to booking types", booking_types_path,  class: "btn btn-primary" %>
 
-  <%= button_to "Destroy this booking type", @booking_type, method: :delete %>
+    
+  <%= button_to "Destroy this booking type", @booking_type, method: :delete, class: "btn btn-warning mt-3" %>
+
+  
+  <%= link_to ' Home', homepage_path, class:"btn btn-dark mt-2" %>
+
 </div>
 </div>
 

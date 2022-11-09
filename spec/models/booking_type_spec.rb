@@ -1,14 +1,6 @@
 require 'rails_helper'
     RSpec.describe BookingType, type: :model do
-        let(:attributes) do 
-            {
-            category: "Food",
-            location: "Maccas",
-            description: "Eating junk food",
-        }
-        end
-
-
+      
     it "is invalid without category" do
         attributes[:category] = nil
   

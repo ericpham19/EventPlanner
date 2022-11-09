@@ -16,6 +16,8 @@ RSpec.describe BookingType, type: :request do
         end
     end
 
+    
+
     # describe "GET /edit" do
     #     it "returns http success" do
     #         get "/booking_types/:id/edit"

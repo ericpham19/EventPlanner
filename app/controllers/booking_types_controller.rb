@@ -16,6 +16,7 @@ class BookingTypesController < ApplicationController
 
   
   def edit
+    
   end
 
  
@@ -26,7 +27,7 @@ class BookingTypesController < ApplicationController
      flash[:notice] = "Booking type was successfully created." 
     else
       flash.now[:alert] = "Please try again"
-        render :new
+      render :new
         
     end
   
@@ -57,6 +58,6 @@ class BookingTypesController < ApplicationController
     end
 
     def booking_type_params
-      params.require(:booking_type).permit(:category, :location, :description, :duration, :user_id)
+      params.require(:booking_type).permit(:category, :location, :description,  :user_id)
     end
 end
