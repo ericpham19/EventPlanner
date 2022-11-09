@@ -1,24 +1,9 @@
-# README
+Hi. My name is Eric and this is an application I have created using Ruby on Rails. Please follow the steps to run the app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+1. Run "rails db:migrate" in the terminal
+2. Run "rails db:seed in the terminal
+3. Run the server by typing "rails s" into the terminal
+4. Access the server at "http://localhost:3000"
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application is intended to be a booking system where a user is able to make bookings using the predefined types or they could create their own types.
