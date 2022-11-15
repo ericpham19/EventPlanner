@@ -1,14 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Bookings</h1>
+<table class= "table mt-5">
+<thead> 
+<tr>
+  <th scope="col"> First name</th>
+  <th scope="col">Last name</th>
+  <th scope="col">Booking type</th>
+  <th scope="col"> Description</th>
+  <th scope="col"> Start At</th>
+  <th scope="col"> End At</th>
+</tr>
+</thead>
+<tbody>
+<% if @bookings.present? %>
+<% @bookings.each do |booking| %>
+<tr>
+  <td><%= booking.first_name %></td>
+  <td><%= booking.last_name %></td>
+  <td><%= booking.booking_type.category %></td>
+  <td><%= booking.booking_type.description %></td>
+  <td><%= booking.start_at%></td>
+  <td><%= booking.end_at%></td>
+  <td><%= link_to 'Show', booking_path(booking), class: 'btn btn-primary' %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
 
-<div id="bookings">
-  <% @bookings.each do |booking| %>
-    <%= render booking %>
-    <p>
-      <%= link_to "Show this booking", booking, class:"btn btn-primary" %>
-    </p>
-  <% end %>
-</div>
 
 
+<% end %>
