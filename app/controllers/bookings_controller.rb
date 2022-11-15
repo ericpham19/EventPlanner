@@ -32,7 +32,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find_by(id: session[:user_id]) 
+    @user = User.find_by(id: session[:user_id])
+    @booking.user = @user
     
       if @booking.save
       redirect_to booking_url(@booking)

@@ -30,9 +30,9 @@
 
 
   <div class= "mb-3">
-  Category: <b><%= @booking_type.category %></b>
+  Category: <b><%= @booking_type&.category %></b>
     
-  <%= form.hidden_field :booking_type_id, :value => @booking_type.id%>
+  <%= form.hidden_field :booking_type_id, :value => @booking_type&.id%>
   </div>
 
   <div class= "mb-3">
