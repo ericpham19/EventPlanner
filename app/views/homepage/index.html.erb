@@ -12,7 +12,7 @@
   <% @booking_types.each do |booking_type| %>
    
     <div class= "mt-5 fs-2 btn btn-light gap-xl">
-    <%= link_to booking_type.category, new_booking_path(booking_type: booking_type.category), class: '' %>
+    <%= link_to booking_type.category, new_booking_path(booking_type: booking_type.category) %>
     </div>
 
   <% end %>
@@ -20,10 +20,7 @@
  </div>
 
 <br />
-<% if @bookings.present? %>
-  <% @bookings.each do |booking| %>
-    
-    
+
     <table class= "table mt-5">
       <thead> 
       <tr>
@@ -36,18 +33,21 @@
       </tr>
       </thead>
       <tbody>
+      <% if @bookings.present? %>
+      <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.first_name %></td>
         <td><%= booking.last_name %></td>
-       
         <td><%= booking.booking_type.category %></td>
         <td><%= booking.booking_type.description %></td>
         <td><%= booking.start_at%></td>
         <td><%= booking.end_at%></td>
+        <td><%= link_to 'Show', booking_path(booking), class: 'btn btn-primary' %></td>
       </tr>
+      <% end %>
       </tbody>
     </table>
 
-    <%= link_to 'Show', booking_path(booking), class: 'btn btn-primary' %>
-  <% end %>
+   
+ 
 <% end %>

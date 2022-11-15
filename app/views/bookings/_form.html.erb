@@ -35,13 +35,11 @@
   <%= form.hidden_field :booking_type_id, :value => @booking_type.id%>
   </div>
 
-  <div>
-  <% if Current.user %>
-    User ID: <b><%= Current.user.id %></b>
+  <div class= "mb-3">
+    User Id: <b><%= session[:user_id] %></b>
+    
+  <%= form.hidden_field :user_id, :value => session[:user_id]%>
 
- 
-    <%= form.hidden_field :user_id, :value => Current.user.id%>
-  <% end %>
   </div>
 
   <div class= "mb-3 ">

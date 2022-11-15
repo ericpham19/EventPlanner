@@ -1,14 +1,16 @@
-
+require "pry"
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show edit update destroy ]
-  before_action :set_booking_type, only: %i[ new edit ]
+  before_action :set_booking_type, only: %i[ new edit show update ]
 
-  skip_before_action :set_current_user
+  
 
   def index
-    @bookings = Booking.all
+   
+    @bookings = Booking.where(user_id: session[:user_id])
+   
     @booking_types = BookingType.all
- 
+  
   end
 
 
@@ -30,7 +32,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-  
+    @user = User.find_by(id: session[:user_id]) 
+    
       if @booking.save
       redirect_to booking_url(@booking)
       flash[:notice] = "Booking has been created sucessfully"
@@ -77,6 +80,6 @@ class BookingsController < ApplicationController
 
 
   def booking_params
-    params.require(:booking).permit( :first_name, :last_name, :email, :start_at, :end_at, :booking_id, :booking_type_id)
+    params.require(:booking).permit( :first_name, :last_name, :email, :start_at, :end_at, :booking_id, :booking_type_id )
   end
 end
