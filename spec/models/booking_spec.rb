@@ -7,6 +7,7 @@ require 'rails_helper'
             last_name: "Alice",
             email: "weaw@gmail.com",
             booking_type: BookingType.new(category: "dwad" , location: "awdawd" , description: "weawadwa"),
+            user: User.new(first_name: "adwadaw", last_name:"wawadwadwa", email: "eread@arwaea.com"),
             start_at: "2022-01-02",
             end_at: "2022-01-03"
         }
@@ -45,7 +46,7 @@ require 'rails_helper'
 
     it "is valid with proper data" do
         booking1= Booking.new(attributes)
-      
+        
         expect(Booking.new(attributes).valid?).to be_truthy
     end
 end
